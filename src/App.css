@@ -16,12 +16,57 @@
   flex-flow: column;
   align-items: center;
   justify-content: space-around;
+  padding: 2%;
+
+  /* border: 5px solid #ffffff;
+  border-radius: 1em;
+  box-shadow: 0px 0px 30px 0px #ffffff,
+  inset 0px 0px 30px 0px #ffffff; */
 }
 
 .title{
   font-size: 5rem;
+  animation: textNeon 2s alternate-reverse infinite;
 }
 
 .subtitle{
-  
+  text-shadow:
+      0 0 10px rgba(255, 255, 255, .7)
+}
+
+.waveButton{
+  font-size: 2rem;
+  padding: 0.5%;
+  margin-top: 2%;
+  background: none;
+  border: 3px solid #ffffff;
+  border-radius: 1em;
+  box-shadow: 0px 0px 10px 0px #ffffff;
+  transition: 0.2s;
+}
+
+.waveButton:hover{
+  transform: scale(1.2);
+  background-color: hsl(212, 46%, 50%);
+  border-color: hsl(212, 46%, 85%);
+  box-shadow: 0px 0px 20px 0px hsl(212, 46%, 60%);
+}
+
+.waveButton:active{
+  transform: scale(0.8);
+}
+
+@keyframes textNeon {
+  from {
+    text-shadow:
+      0 0 11px rgba(255, 255, 255, .7),
+      0 0 41px rgba(255, 255, 255, .7),
+      0 0 101px rgba(255, 255, 255, .7);
+  }
+  to {
+    text-shadow:
+      0 0 6px rgba(255, 255, 255, .7),
+      0 0 21px rgba(255, 255, 255, .7),
+      0 0 61px rgba(255, 255, 255, .7);
+  }
 }
