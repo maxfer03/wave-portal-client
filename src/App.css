@@ -7,6 +7,9 @@
 
 
 
+
+
+
 .welcome {
   font-size: 2rem;
   color: white;
@@ -55,6 +58,15 @@
 .waveButton:active{
   transform: scale(0.8);
 }
+
+#notLogged{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  padding: 1%;
+  color: white;
+  animation: textNeon 2s alternate-reverse infinite;
+}
+
+
 
 @keyframes textNeon {
   from {
