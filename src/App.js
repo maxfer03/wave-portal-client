@@ -122,8 +122,7 @@ function App() {
 
         let count = await waveContract.getTotalWaves();
         console.log("total waves:", count.toNumber());
-
-        const waveTxn = await waveContract.wave(message, { gasLimit: 300000 });
+        const waveTxn = await waveContract.wave(message == "" ? "👋👋👋" : message, { gasLimit: 300000 });
         console.log("Mining...", waveTxn.hash);
 
         await waveTxn.wait();
@@ -208,6 +207,7 @@ function App() {
                 className="msgInput"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
+                placeholder = "Any thoughts?"
               />
               <button type="submit" className="waveButton">
                 👋👋👋
