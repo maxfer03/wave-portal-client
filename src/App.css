@@ -1,18 +1,17 @@
 .App {
   background-image: url("./imgs/Meteor.svg");
-  height: 100vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
-}
-
-
-
-
-
-
-.welcome {
+  flex-direction: column;
+  align-items: center;
   font-size: 2rem;
   color: white;
+  text-align: center;
+}
+
+.welcome {
   height: 30%;
   margin: 5%;
   display: flex;
@@ -27,17 +26,26 @@
   inset 0px 0px 30px 0px #ffffff; */
 }
 
-.title{
+.titleContainer {
+  width: 50vw;
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  width: 50%;
   font-size: 5rem;
   animation: textNeon 2s alternate-reverse infinite;
+  margin-bottom: 5%;
 }
 
-.subtitle{
-  text-shadow:
-      0 0 10px rgba(255, 255, 255, .7)
+.subtitle {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
 }
 
-.waveButton{
+.waveButton {
   font-size: 2rem;
   padding: 0.5%;
   margin-top: 2%;
@@ -48,37 +56,137 @@
   transition: 0.2s;
 }
 
-.waveButton:hover{
+.waveButton:hover {
   transform: scale(1.2);
   background-color: hsl(212, 46%, 50%);
   border-color: hsl(212, 46%, 85%);
   box-shadow: 0px 0px 20px 0px hsl(212, 46%, 60%);
 }
 
-.waveButton:active{
+.waveButton:active {
   transform: scale(0.8);
 }
 
-#notLogged{
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+.msgInput {
+  background: none;
+  border: 3px solid #ffffff;
+  border-radius: 1em;
+  box-shadow: 0px 0px 10px 0px #ffffff;
+  color: white;
+  font-size: 2rem;
+  padding-left: 2%;
+  padding-right: 2%;
+  margin-top: 5%;
+  margin-bottom: 2%;
+  outline: none;
+  transition: 0.2s;
+}
+
+.msgInput:focus {
+  transform: scale(1.2);
+  background-color: hsl(212, 46%, 50%);
+  border-color: hsl(212, 46%, 85%);
+  box-shadow: 0px 0px 20px 0px hsl(212, 46%, 60%);
+}
+
+.mining {
+  padding: 0.5%;
+  margin-top: 2%;
+  border: 3px;
+  animation: textNeon 2s alternate-reverse infinite;
+}
+
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 50px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #fff;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+
+#notLogged {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   padding: 1%;
   color: white;
   animation: textNeon 2s alternate-reverse infinite;
 }
 
+.dataContainer {
+  width: 90vw;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5%;
+}
 
+.totalWaves {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+.msgContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+}
 
 @keyframes textNeon {
   from {
-    text-shadow:
-      0 0 11px rgba(255, 255, 255, .7),
-      0 0 41px rgba(255, 255, 255, .7),
-      0 0 101px rgba(255, 255, 255, .7);
+    text-shadow: 0 0 11px rgba(255, 255, 255, 0.7),
+      0 0 41px rgba(255, 255, 255, 0.7), 0 0 101px rgba(255, 255, 255, 0.7);
   }
   to {
-    text-shadow:
-      0 0 6px rgba(255, 255, 255, .7),
-      0 0 21px rgba(255, 255, 255, .7),
-      0 0 61px rgba(255, 255, 255, .7);
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.7),
+      0 0 21px rgba(255, 255, 255, 0.7), 0 0 61px rgba(255, 255, 255, 0.7);
+  }
+}
+
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
   }
 }
