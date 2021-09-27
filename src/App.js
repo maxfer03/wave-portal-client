@@ -180,7 +180,7 @@ function App() {
       //Popback
     });
   }, [account]);
-
+  let key = 0
   return (
     <div className="App">
       <div className="welcome">
@@ -226,7 +226,7 @@ function App() {
             </div>
             <div className="msgContainer">
               {waves.map((e) => {
-                return <Message msg={e.msg} time={e.time} adr={e.adr} />;
+                return <Message key = {key +=1} msg={e.msg} time={e.time} adr={e.adr} />;
               })}
             </div>
           </div>
